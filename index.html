@@ -28,6 +28,34 @@
 
   html { scroll-behavior: smooth; }
 
+  /* LIGHTBOX */
+.lightbox-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-overlay img {
+  max-width: 90vw; max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  cursor: default;
+}
+.lightbox-close {
+  position: absolute; top: 1.25rem; right: 1.5rem;
+  color: white; font-size: 28px; font-weight: 300;
+  cursor: pointer; line-height: 1;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+.lightbox-close:hover { opacity: 1; }
+.project-img { cursor: zoom-in; }
+
   body {
     font-family: 'Inter', system-ui, sans-serif;
     background: var(--bg);
@@ -196,11 +224,12 @@
 <body>
 
 <nav>
-  <span class="nav-name">Dimitrios Papanikolaou</span>
+  <span class="nav-name">Dimitrios Papanikolaou - Portfolio</span>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    
   </ul>
 </nav>
 
@@ -292,15 +321,6 @@
     </div>
 
     <div class="edu-item">
-      <span class="edu-period">2018 –<br>2023</span>
-      <div class="edu-content">
-        <h3>BSc Geology</h3>
-        <p class="school">Aristotle University of Thessaloniki — Greece · 7.34</p>
-        <p class="courses">Thesis: Interpretation of transient electromagnetic data using MatLab · GIS &amp; Geological Cartographic Data · Remote Sensing · Geospatial Data Analysis</p>
-      </div>
-    </div>
-
-    <div class="edu-item">
       <span class="edu-period">2024</span>
       <div class="edu-content">
         <h3>CS50 Introduction to Computer Science</h3>
@@ -308,6 +328,17 @@
         <p class="courses">Final project: Pong game built in Python using object-oriented programming principles.</p>
       </div>
     </div>
+
+    <div class="edu-item">
+      <span class="edu-period">2018 –<br>2023</span>
+      <div class="edu-content">
+        <h3>BSc Geology</h3>
+        <p class="school">Aristotle University of Thessaloniki — Greece</p>
+        <p class="courses">Thesis: Interpretation of transient electromagnetic data using MatLab · GIS &amp; Geological Cartographic Data · Remote Sensing · Geospatial Data Analysis</p>
+      </div>
+    </div>
+
+
 
   </div>
 </section>
@@ -321,7 +352,7 @@
     <div class="projects-grid">
 
       <div class="project-card">
-        <img class="project-img" src="C:\Users\jimpa\Documents\Portfolio\Images\geo-scripting.jpg"
+        <img class="project-img" src="Images\geo-scripting.png" alt="Screenshot of a GeoScripting project">
         <div class="project-body">
           <p class="project-title">Amsterdam Land Surface Temperature Dashboard</p>
           <p class="project-desc">Interactive web dashboard displaying 10 years of surface temperature data for Amsterdam. Users can explore data at pixel, neighbourhood, or city level across yearly, monthly, and individual time modes.</p>
@@ -332,7 +363,7 @@
       </div>
 
       <div class="project-card">
-        <img class="project-img" src="C:\Users\jimpa\Documents\Portfolio\Images\geo-tools.png">
+        <img class="project-img" src="Images\geo-tools.png" alt="Screenshot of a QGIS project analyzing industrial wastewater pipeline routes in the Maas Waal area">
         <div class="project-body">
           <p class="project-title">Industrial Wastewater Solutions — Maas Waal Area</p>
           <p class="project-desc">Geospatial analysis to calculate the optimal pipeline route connecting industrial wastewater zones to the largest water treatment basin in the Maas Waal region, using cost suitability raster analysis.</p>
@@ -343,12 +374,16 @@
       </div>
 
       <div class="project-card">
-        <img class="project-img" src="C:\Users\jimpa\Documents\Portfolio\Images\website-screenshot.png"
+        <img class="project-img" src="Images\website-screenshot.png" alt="Screenshot of The HotSpotters website prototype">
         <div class="project-body">
           <p class="project-title">Website Prototype - The HotSpotters</p>
-          <p class="project-desc">Website where nature enthusiasts can vote their favourite location for a potential watchtower. <a href="Link to the full website."><a href="url"></a></p>
+          <p class="project-desc">Website where nature enthusiasts can vote their favourite location for a potential watchtower. <a href="https://www.figma.com/proto/DQQdoqkyrZIihxVoRdX7qW/Hotspotters---Vote-for-Watchtower?node-id=989-457&p=f&t=LyzUQtnLJEg9ieZK-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=794%3A115"><a href="url">View full website →</a></p>
           <div class="project-tech">
             <span>LiDAR Point Clouds</span><span>ArcGIS</span><span>Unity Game Engine</span>
           </div>
         </div>
-      </div>
+      </div>  
+        <footer>© 2026 Dimitrios Papanikolaou</footer>
+
+  </body>
+</html>
