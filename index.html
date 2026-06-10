@@ -384,6 +384,37 @@
         </div>
       </div>  
         <footer>© 2026 Dimitrios Papanikolaou</footer>
+      <!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
+<script>
+  const overlay = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  // Open on image click
+  document.querySelectorAll('.project-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      overlay.classList.add('active');
+    });
+  });
+
+  // Close on X button or clicking the backdrop
+  document.getElementById('lightbox-close').addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+
+  // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') overlay.classList.remove('active');
+  });
+</script>
   </body>
 </html>
